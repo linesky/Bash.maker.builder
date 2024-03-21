@@ -62,7 +62,7 @@ class BareboneBuilder:
             if f2<0:
                 f2=filename.find(".ASM")
             if f2>-1:
-                f1.write(('as -f elf32 "$1" -o "/tmp/$1".o\n').replace("$1",filename))
+                f1.write(('as -f elf32 "$1" -o "/tmp/$1.o"\n').replace("$1",filename))
             f2=filename.find(".c")
             if f2<0:
                 f2=filename.find(".C")
@@ -71,23 +71,23 @@ class BareboneBuilder:
             if f2<0:
                 f2=filename.find(".cc")
             if f2>-1:
-                f1.write(('gcc -c "$1" -o "/tmp/$1".o\n').replace("$1",filename))           
+                f1.write(('gcc -c "$1" -o "/tmp/$1.o"\n').replace("$1",filename))           
 
             f2=filename.find(".cpp")
             if f2<0:
                 f2=filename.find(".CPP")
             if f2>-1:
-                f1.write(('g++ -c "$1" -o "/tmp/$1".o\n').replace("$1",filename))
+                f1.write(('g++ -c "$1" -o "/tmp/$1.o"\n').replace("$1",filename))
             f2=filename.find(".bas")
             if f2<0:
                 f2=filename.find(".BAS")
             if f2>-1:
-                f1.write(('fbc -c "$1" -o "/tmp/$1".o\n').replace("$1",filename))
+                f1.write(('fbc -c "$1" -o "/tmp/$1.o"\n').replace("$1",filename))
             f2=filename.find(".pas")
             if f2<0:
                 f2=filename.find(".PAS")
             if f2>-1:
-                f1.write(('fpc -c "$1" -o "/tmp/$1".o\n').replace("$1",filename))
+                f1.write(('fpc -c "$1" -o "/tmp/$1.o"\n').replace("$1",filename))
             f1.close()
     def run_kernel(self):
         self.text_area.delete(1.0, tk.END)
