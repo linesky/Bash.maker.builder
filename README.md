@@ -1,2 +1,3 @@
-# iso.linux.memcopy
-copys a memory into other parte of memory fasm in isolinux
+# iso.linux.blue.os
+ fasm in isolinux blue operation system runing on iso lunix
+
